@@ -1,0 +1,26 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --green: #b9ff66;
+  --grey: #f3f3f3;
+  --grey-alt: #898989;
+  --dark: #191a23;
+  --dark-alt: #292a32;
+
+  --border-black: 1px solid var(--black);
+  --border-dark: 1px solid var(--dark);
+  --border-green: 1px solid var(--green);
+
+  --border-r-s: 7px;
+  --border-r-m: 14px;
+  --border-r-l: 45px;
+
+  --shadow-dark: 0 5px 0 0 var(--dark);
+
+  --font-family: "Space Grotesk", sans-serif;
+
+  --container-width: 1240px;
+  --container-padding-x: 20px;
+
+  --duration: 0.2s;
+}

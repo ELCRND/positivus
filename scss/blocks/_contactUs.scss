@@ -1,0 +1,190 @@
+.contact-us {
+  padding-top: 140px;
+
+  @include mobile {
+    padding-top: 60px;
+  }
+}
+
+.contact-us__container {
+  width: min(1240px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.contact-us__header {
+  display: flex;
+  gap: 46px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.contact-us__title {
+  padding: 0 7px;
+  border-radius: var(--border-r-s);
+  background-color: var(--green);
+  white-space: nowrap;
+  line-height: 140%;
+}
+
+.contact-us__description {
+  max-width: 472px;
+
+  @include fluid-text(16, 18);
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.contact-us__body {
+  margin-top: 80px;
+  padding: 60px 100px;
+  border-radius: var(--border-r-l);
+  background: var(--grey);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  @include tablet {
+    padding: 50px;
+  }
+  @include mobile {
+    padding: 40px 30px;
+    overflow: visible;
+  }
+}
+
+.contact-us__form {
+  max-width: 556px;
+  display: flex;
+  flex-direction: column;
+
+  .contact-form__toggler {
+    display: flex;
+    gap: 35px;
+
+    @include mobile {
+      gap: 15px;
+    }
+
+    label {
+      @include fluid-text(16, 18);
+    }
+
+    input {
+      width: 30px;
+      height: 30px;
+      position: relative;
+
+      @include mobile {
+        width: 28px;
+        height: 28px;
+      }
+
+      &::before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-color: var(--white);
+        border: 1px solid var(--black);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+
+        @include mobile {
+          width: 28px;
+          height: 28px;
+        }
+      }
+
+      &:checked {
+        &::after {
+          content: "";
+          width: 16px;
+          height: 16px;
+          background-color: var(--green);
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          translate: -50% -50%;
+        }
+      }
+    }
+  }
+
+  > label {
+    margin-top: 40px;
+    line-height: 175%;
+    @include fluid-text(14, 16);
+
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+
+  > input,
+  > textarea {
+    border: 1px solid var(--black);
+    border-radius: 14px;
+    padding: 18px 30px;
+    @include fluid-text(16, 18);
+
+    @include mobile {
+      padding: 18px 20px;
+    }
+  }
+
+  > textarea {
+    height: 190px;
+
+    @include mobile {
+      height: 132px;
+    }
+  }
+
+  > button {
+    margin-top: 40px;
+    border-radius: 14px;
+    padding: 20px 35px;
+    background: var(--dark);
+    font-size: 20px;
+    line-height: 140%;
+    color: #fff;
+
+    @include hover {
+      background-color: color-mix(in oklab, var(--green), var(--dark-alt) 25%);
+    }
+
+    @include mobile {
+      max-width: 390px;
+      width: 100%;
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      translate: -50% 100%;
+    }
+  }
+}
+
+.contact-us__background {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 47% -50%;
+  z-index: -1;
+
+  @include mobile {
+    display: none;
+  }
+}

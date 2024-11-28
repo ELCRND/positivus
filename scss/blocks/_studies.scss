@@ -1,0 +1,128 @@
+.studies {
+  padding-top: 140px;
+
+  @include mobile {
+    padding-top: 60px;
+  }
+}
+
+.studies__container {
+  width: min(1240px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.studies__header {
+  display: flex;
+  gap: 46px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.studies__title {
+  padding: 0 7px;
+  border-radius: var(--border-r-s);
+  background-color: var(--green);
+  white-space: nowrap;
+  line-height: 140%;
+}
+
+.studies__description {
+  max-width: 580px;
+
+  @include fluid-text(16, 18);
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.studies__body {
+  margin-top: 80px;
+  padding: 70px 60px;
+  border-radius: var(--border-r-l);
+  background: var(--dark);
+  display: flex;
+
+  @include tablet {
+    padding: 60px 50px;
+  }
+  @include mobile {
+    margin-top: 40px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    overflow-x: scroll;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.studies__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mobile {
+    min-width: 350px;
+    padding: 42px 50px;
+    border-radius: var(--border-r-l);
+    background: var(--dark);
+    scroll-snap-align: center;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 64px;
+    padding-right: 64px;
+    border-right: 1px solid var(--white);
+
+    @include tablet {
+      margin-right: 32px;
+      padding-right: 32px;
+    }
+
+    @include mobile {
+      margin: 0;
+      padding-right: 50px;
+    }
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: var(--white);
+
+    @include fluid-text(16, 18);
+    @include mobile {
+      line-height: 150%;
+    }
+  }
+
+  a {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
+    line-height: 140%;
+    color: var(--green);
+
+    @include hover {
+      filter: brightness(0.8);
+    }
+
+    span {
+      &:last-of-type {
+        height: 20px;
+      }
+    }
+  }
+}

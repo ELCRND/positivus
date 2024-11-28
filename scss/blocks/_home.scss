@@ -1,0 +1,163 @@
+.home {
+  padding-top: 70px;
+}
+
+.home__container {
+  width: min(1240px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__content {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title background"
+    "description background"
+    "link background";
+  gap: 35px 108px;
+
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "title "
+      "background"
+      "description"
+      "link";
+    gap: 20px;
+    place-items: center;
+  }
+}
+
+.home__title {
+  grid-area: title;
+  max-width: 532px;
+  font-weight: 500;
+  line-height: 140%;
+  @include fluid-text(43, 60);
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.home__description {
+  grid-area: description;
+  line-height: 140%;
+  @include fluid-text(16, 20);
+
+  @include mobile {
+    max-width: 390px;
+    text-align: center;
+  }
+}
+
+a.home__link {
+  grid-area: link;
+  width: 264px;
+  height: 68px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  font-size: 20px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--white);
+
+  @include hover {
+    background-color: color-mix(in oklab, var(--green), var(--dark-alt) 25%);
+  }
+
+  @include mobile {
+    max-width: 390px;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.home__background {
+  grid-area: background;
+  width: 100%;
+  height: 100%;
+  background-image: url(../public/images/home/home-background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include mobile {
+    min-height: 310px;
+  }
+}
+
+.home__banner {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.banner__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include mobile {
+    grid-template-columns: auto;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-around;
+
+    @include mobile {
+      gap: 30px;
+    }
+
+    &:nth-of-type(1) {
+      @include mobile-s {
+        animation: move-first 8s linear infinite;
+      }
+    }
+    &:nth-of-type(2) {
+      @include mobile-s {
+        animation: move-second 8s linear infinite;
+      }
+    }
+
+    img {
+      filter: grayscale(1);
+
+      @include tablet {
+        scale: 0.7;
+      }
+      @include mobile {
+        scale: 1;
+      }
+    }
+  }
+}
+
+@keyframes move-first {
+  0% {
+    translate: -50% 0;
+  }
+  50% {
+    translate: 10% 0;
+  }
+  100% {
+    translate: -50% 0;
+  }
+}
+@keyframes move-second {
+  0% {
+    translate: 10% 0;
+  }
+  50% {
+    translate: -50% 0;
+  }
+  100% {
+    translate: 10% 0;
+  }
+}

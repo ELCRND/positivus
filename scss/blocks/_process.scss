@@ -1,0 +1,147 @@
+.process {
+  padding-top: 140px;
+
+  @include mobile {
+    padding-top: 60px;
+  }
+}
+
+.process__container {
+  width: min(1240px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.process__header {
+  display: flex;
+  gap: 46px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.process__title {
+  padding: 0 7px;
+  border-radius: var(--border-r-s);
+  background-color: var(--green);
+  white-space: nowrap;
+  line-height: 140%;
+}
+
+.process__description {
+  max-width: 292px;
+
+  @include fluid-text(16, 18);
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.process__body {
+  margin-top: 80px;
+
+  @include mobile {
+    margin-top: 30px;
+  }
+}
+
+.process__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  counter-reset: num;
+
+  details {
+    padding: 40px 60px;
+    border: 1px solid var(--dark);
+    border-radius: 45px;
+    background: var(--grey);
+    box-shadow: var(--shadow-dark);
+    transition: background-color var(--duration) ease;
+    position: relative;
+    counter-increment: num;
+
+    &[open] {
+      background-color: var(--green);
+
+      .indicator {
+        &::after {
+          width: 1px;
+        }
+      }
+    }
+
+    @include mobile {
+      padding: 30px;
+    }
+
+    summary {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-weight: 500;
+      @include fluid-text(18, 30);
+
+      @include mobile {
+        gap: 16px;
+      }
+
+      &::before {
+        content: "0" counter(num);
+        font-weight: 500;
+        @include fluid-text(30, 60);
+      }
+    }
+
+    p {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid var(--black);
+    }
+
+    .indicator {
+      flex-shrink: 0;
+      display: block;
+      width: 58px;
+      height: 58px;
+      margin-left: auto;
+      border: 1px solid var(--black);
+      border-radius: 50%;
+      background-color: var(--grey);
+      position: relative;
+
+      @include mobile {
+        width: 30px;
+        height: 30px;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        width: 26px;
+        height: 7px;
+        background-color: var(--black);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+
+        @include mobile {
+          width: 14px;
+          height: 2px;
+        }
+      }
+
+      &::after {
+        transition: all 100ms ease;
+        rotate: -90deg;
+      }
+    }
+  }
+}

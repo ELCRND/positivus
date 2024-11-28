@@ -1,0 +1,10 @@
+@mixin fluid-text($min: 16, $max: 48) {
+  font-size: clamp(#{$min}px, #{calc($max / 1440 * 100)}vw, #{$max}px);
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}

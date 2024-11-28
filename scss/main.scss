@@ -1,0 +1,14 @@
+@import "base/normalize", "base/fonts", "base/variables", "base/media",
+  "base/mixins", "base/utils", "base/globals";
+
+@import "blocks/header";
+
+@import "blocks/home";
+@import "blocks/services";
+@import "blocks/studies";
+@import "blocks/process";
+@import "blocks/team";
+@import "blocks/testimonials";
+@import "blocks/contactUs";
+
+@import "blocks/footer";
