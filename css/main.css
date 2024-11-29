@@ -274,6 +274,10 @@ summary {
   }
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: var(--font-family);
   font-weight: 400;
